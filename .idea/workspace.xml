@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c04ef1d2-3f4e-412b-84b9-bb3059b606a3" name="Default" comment="core">
+    <list default="true" id="c04ef1d2-3f4e-412b-84b9-bb3059b606a3" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/config/database.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/config/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/config/route.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/lib/conf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082310/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082310log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082311/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082319/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082409/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082410/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082411/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/2017082412/log.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log/log.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/CyPHP.php" afterPath="$PROJECT_DIR$/core/CyPHP.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/lib/Conf.php" afterPath="$PROJECT_DIR$/core/lib/Conf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/lib/Model.php" afterPath="$PROJECT_DIR$/core/lib/Model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/lib/Route.php" afterPath="$PROJECT_DIR$/core/lib/Route.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -369,7 +354,7 @@
       <workItem from="1503449877785" duration="7598000" />
       <workItem from="1503479521861" duration="4085000" />
       <workItem from="1503538678231" duration="8043000" />
-      <workItem from="1503550722422" duration="1303000" />
+      <workItem from="1503550722422" duration="1329000" />
     </task>
     <task id="LOCAL-00001" summary="Completely the basic framework，and the structural is not integrity.">
       <created>1503314911010</created>
@@ -441,11 +426,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503554067591</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="core">
+      <created>1503554157402</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1503554157402</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65150000" />
+    <option name="totallyTimeSpent" value="65176000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-8" width="1873" height="1092" extended-state="0" />
@@ -815,6 +807,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -822,6 +815,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
           <caret line="20" column="47" lean-forward="false" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
