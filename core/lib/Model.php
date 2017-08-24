@@ -7,18 +7,18 @@
  */
 namespace core\lib;
 
-class Model extends \PDO
+use Medoo\Medoo;
+
+/**
+ * Class Model
+ * @package core\lib
+ * 模型层，不知道那个界面的模型层
+ */
+class Model extends Medoo
 {
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;dbname=cyphp';
-        $username = 'cyphp';
-        $passwd = '123456';
-//        $options = '';
-        try {
-        parent::__construct($dsn, $username, $passwd);
-        } catch (\PDOException $e){
-            p($e->getMessage());
-        }
+        $option = Conf::all('database');
+        parent::__construct($option);
     }
 }

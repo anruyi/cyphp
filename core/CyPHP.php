@@ -9,33 +9,48 @@
 namespace core;
 
 use app\ctrl\indexCtrl;
+use core\lib\Log;
 use core\lib\Route;
 
 
 /**
  * Class CyPHP
  * @package core
+ * 基类
  */
 class CyPHP
 {
+    /**
+     * @var array
+     * 我也不知道这是什么鬼
+     */
     public $assign = array();
 
     public static $classMap = array();
+
     /**
      * 启动框架调用方法
      */
     static public function run()
     {
+        /**
+         * 启动日志
+         */
+        Log::init();
+
+        /**
+         * 获取Route()的文件和控制器名
+         */
         $route = new Route();
         $ctrlClass = $route->ctrl;
-        $action = $route->action;
-        $ctrlfile = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
-            p($ctrlfile,'ctrlfile');
-        if (is_file($ctrlfile)){
+        $ctrlAction = $route->action;
+        $ctrlPath = APP.'/ctrl/'.$ctrlClass.'Ctrl.php';
+        if (is_file($ctrlPath)){
             $indexCtrl = new indexCtrl();
-            $indexCtrl->$action();
+            $indexCtrl->$ctrlAction();
+            Log::log('ctrl:'.$ctrlClass.'    '.'action:'.$ctrlAction);
         }else {
-            throw new \Exception('找不到控制器'.$ctrlfile);
+            throw new \Exception('找不到控制器'.$ctrlPath);
         }
 
     }
@@ -47,25 +62,35 @@ class CyPHP
      */
     static public function load($class)
     {
-        if(isset($classMap['$class'])){
+
+        if(isset($classMap[$class])){
             return true;
         }else{
-            $file = CYPHP .'/' .$class . '.php';
-            if (is_file($file)) {
-                include $file;
-                p($file,'自动装载路径：');
-                self::$classMap[$class] = $file;
+
+            $path = CYPHP .'/' .$class . '.php';
+            if (is_file($path)) {
+                include $path;
+                self::$classMap[$class] = $path;
             }else{
                 false;
             }
         }
     }
 
+    /**
+     * @param $name
+     * @param $value
+     * 插入数据给页面
+     */
     public function assign($name,$value)
     {
         $this->assign[$name] = $value;
     }
 
+    /**
+     * @param $file
+     * 显示相应的view层页面
+     */
     public function display($file)
     {
         $file = APP.'/views/'.$file;
