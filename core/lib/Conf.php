@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * Created by PhpStorm.
@@ -63,3 +64,4 @@ class Conf
         }
     }
 }
+
