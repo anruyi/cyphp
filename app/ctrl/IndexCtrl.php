@@ -8,21 +8,25 @@
 
 namespace app\ctrl;
 
+use app\model\MainModel;
 use core\CyPHP;
+use core\lib\Conf;
 use core\lib\Model;
+use Medoo\Medoo;
 
 class indexCtrl extends CyPHP
 {
     public function index()
     {
-        $model = new Model();
 
+        $temp = Conf::get('CTRL','route');
+        p($temp);
         p('This is a ctrl');
+        
         /*模型层，连接数据库的那个层*/
-        $sql = 'select * from cytable';
-        $res = $model->query($sql);
-        p($res->fetchAll());
-
+        $model = new MainModel();
+        $res = $model->lists();
+        p($res);
         /*Mode end*/
 
         /*views page start*/
@@ -30,6 +34,5 @@ class indexCtrl extends CyPHP
         $this->assign('a',$a);
         $this->display('index.html');
         /*views page end*/
-
     }
 }
