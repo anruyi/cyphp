@@ -35,4 +35,11 @@ class indexCtrl extends CyPHP
         $this->display('index.html');
         /*views page end*/
     }
+
+    public function test()
+    {
+        $a = 'test';
+        $this->assign('a',$a);
+        $this->display('test.html');
+    }
 }
