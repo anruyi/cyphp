@@ -18,15 +18,11 @@ class indexCtrl extends CyPHP
 {
     public function index()
     {
-
         $temp = Conf::get('CTRL','route');
-        p($temp);
-        p('This is a ctrl');
         
         /*模型层，连接数据库的那个层*/
         $model = new MainModel();
         $res = $model->lists();
-        p($res);
         /*Mode end*/
 
         /*views page start*/

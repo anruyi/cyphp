@@ -7,29 +7,9 @@
  */
 
 /**
- * @param $var
- * 一个常用的替代php原生输出的函数
- */
-//function p($var)
-//{
-//    if(is_bool($var)){
-//        var_dump($var);
-//    }else if(is_null($var)){
-//        var_dump(NULL);
-//    }else{
-//        echo
-//            "<pre style='
-//            border: solid #999 3px;border-radius: 5px;
-//            width: 100%;font-size: xx-large;background-color: darkgrey;
-//            color: #fff;text-align: left'>"
-//            .print_r($var,true).
-//            "</pre>"
-//        ;
-//    }
-//}
-/**
  * @param $var2
  * @param string $var1
+ * 一个常用的替代php原生输出的函数
  */
 function p($var2, $var1='')
 {

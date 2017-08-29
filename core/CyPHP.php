@@ -97,19 +97,15 @@ class CyPHP
             /**
              * 使用TWIG模板引擎
              */
-
-            require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
-            \Twig_Autoloader::register();
-
+            //require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
+            //\Twig_Autoloader::register();
             $loader = new \Twig_Loader_Filesystem(APP.'/views');
             $twig = new \Twig_Environment($loader, array(
                 'cache' => CYPHP.'/log/compilation_cache',
                 'debug' => 'DEBUG'
             ));
-            //$template = $twig->load('index.html');
             $template = $twig->loadTemplate('index.html');
             $template->display($this->assign?$this->assign:'');
-
         } else {
             p('is not a file',$file);
         }

@@ -22,11 +22,9 @@ class Log
         $drive = Conf::get('DRIVE','log');
         $class = '\core\lib\drive\log\\'.$drive;
         self::$class = new $class; //把弄过来的变量地址作为新的对象，神来之作。
-        p($drive);
     }
     static public function log($name,$file='log')
     {
-        p(self::$class);
         self::$class->log($name,$file);
     }
 }
