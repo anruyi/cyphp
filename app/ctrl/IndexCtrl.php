@@ -1,41 +1,61 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: chenyi
- * Date: 17-8-19
- * Time: 18:12
- */
+
 
 namespace app\ctrl;
 
-use app\model\MainModel;
+use app\model\GuestModel;
 use core\CyPHP;
-use core\lib\Conf;
-use core\lib\Model;
-use Medoo\Medoo;
 
 class indexCtrl extends CyPHP
 {
+    /**
+     * 所有留言
+     */
     public function index()
     {
-        $temp = Conf::get('CTRL','route');
-        
-        /*模型层，连接数据库的那个层*/
-        $model = new MainModel();
-        $res = $model->lists();
-        /*Mode end*/
-
-        /*views page start*/
-        $a = 'hello';
-        $this->assign('a',$a);
+        $model = new GuestModel();
+        $data = $model->all();
+        $this->assign('data',$data);
+        $this->assign('CYPHP',CYPHP);
         $this->display('index.html');
-        /*views page end*/
     }
 
-    public function test()
+    /**
+     * 添加留言
+     */
+    public function layout()
     {
-        $a = 'test';
-        $this->assign('a',$a);
-        $this->display('test.html');
+        $this->display('layout.html');
+    }
+
+    /**
+     * 关于
+     */
+    public function about()
+    {
+
+        $this->display('about.html');
+    }
+
+    /**
+     * 保存留言
+     */
+    public function save()
+    {
+
+    }
+
+    /**
+     * 打开全文
+     */
+    public function learnMore()
+    {
+        $model = new GuestModel();
+        $data = $model->all();
+        $this->assign('data',$data);
+        $this->assign('CYPHP',CYPHP);
+
+        $this->assign('get',$_GET['id']);
+        $this->display('single.html');
     }
 }

@@ -28,34 +28,40 @@ class Route
      */
     public function __construct()
     {
-        //根目录 cyphp，具体需要修改
-        //www.xxx.com/index/index,不是根目录
-        if (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/cyphp/') {
+        /**
+         * 如进入默认路径xxx.com,则自动跳转致/index/index
+         */
+        if (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/') {
             $pathArr =  explode('/',trim($_SERVER['REQUEST_URI'],'/'));
-            unset($pathArr[0]);
-            if (isset($pathArr[1])){
-                $this->ctrl = $pathArr[1];
-                unset($pathArr[1]);
+            if (isset($pathArr[0])){
+                $this->ctrl = $pathArr[0];
+                unset($pathArr[0]);
             }
-            if (isset($pathArr[2])){
-                $this->action = $pathArr[2];
-                unset($pathArr[2]);
+            /**
+             * 控制器不存在的时候，调用默认控制器index
+             */
+            if (isset($pathArr[1])){
+                $this->action = $pathArr[1];
+                unset($pathArr[1]);
             } else {
                 $this->action = Conf::get('ACTION','route');
             }
-        } else {   //www.xxx.com/,根目录
+        } else {   //www.xxx.com/index/index
             $this->ctrl = Conf::get('CTRL','route');
             $this->action = Conf::get('ACTION','route');
         }
 
-        $i = 3;
-        if(isset($pathArr))
-            $count = count($pathArr) + 2;
-        else
-            $count = 0;
-        while ($i<$count){
-            $_GET[$i] = $pathArr[$i+1];
-            $i+=2;
+        $i = 2;
+        /**
+         * 判断路径是否只有一套，如若不是，则pathArr不为空，路由继续解析
+         */
+        $count = 0;
+        if (isset($pathArr)){
+            $count = count($pathArr) + 1;
+            while ($i<$count){
+                $_GET[$pathArr[$i]] = $pathArr[$i+1];
+                $i+=2;
+            }
         }
     }
 }

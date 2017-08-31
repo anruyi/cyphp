@@ -38,7 +38,7 @@ class CyPHP
         Log::init();
 
         /**
-         * 获取Route()的文件和控制器名
+         * 获取Route()的文件和控制器名,选择要调药的控制器，这里默认调用indexCtrl
          */
         $route = new Route();
         $ctrlClass = $route->ctrl;
@@ -92,20 +92,21 @@ class CyPHP
      */
     public function display($file)
     {
+        $html = $file;
         $file = APP.'/views/'.$file;
         if (is_file($file)){
             /**
              * 使用TWIG模板引擎
              */
-            //require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
-            //\Twig_Autoloader::register();
+            require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
+            \Twig_Autoloader::register();
             $loader = new \Twig_Loader_Filesystem(APP.'/views');
             $twig = new \Twig_Environment($loader, array(
                 'cache' => CYPHP.'/log/compilation_cache',
                 'debug' => 'DEBUG'
             ));
-            $template = $twig->loadTemplate('index.html');
-            $template->display($this->assign?$this->assign:'');
+            $template = $twig->loadTemplate($html);
+            $template->display($this->assign?$this->assign:array());
         } else {
             p('is not a file',$file);
         }
