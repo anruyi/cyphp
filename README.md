@@ -1,4 +1,4 @@
 # cyphp
-My first php framework named cyphp
+Use my framework write a web page of blog
 
 
