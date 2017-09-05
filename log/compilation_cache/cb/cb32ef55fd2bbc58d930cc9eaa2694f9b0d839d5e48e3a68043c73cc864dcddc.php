@@ -28,24 +28,71 @@ class __TwigTemplate_f537c11ed7d8e26369670a2f3d692a05b883e5195434dcf70b6d4297e8c
     public function block_content($context, array $blocks = array())
     {
         // line 3
-        echo "
+        echo "<section class=\"row featured-post-carousel\">
+    <div class=\"item post\">
+        <img src=\"/app/assets/images/featured-posts/1.jpg\" alt=\"\" class=\"img-responsive main-bg\">
+        <div class=\"post-content\">
+            <div class=\"container\">
+                <h5 class=\"post-meta\"><i>in</i> <a href=\"#\">Author Profile</a> | <a href=\"#\">feb 17, 2016</a></h5>
+                <h2 class=\"post-title\"><a href=\"/index/single\">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h2>
+                <a href=\"index/single\" class=\"btn btn-primary\"><span>read more</span></a>            </div>
+        </div>
+    </div>
+</section>
 
-<body>
-
-<h2>This is a view page!";
-        // line 7
-        echo twig_escape_filter($this->env, (isset($context["a"]) ? $context["a"] : null), "html", null, true);
-        echo "</h2>
-<h2>This is a view page!</h2>
-<h2>This is page!</h2>
-<h2>This is a view page!</h2>
-<h2>This is a view page!</h2>
-</body>
-
-";
-        // line 14
-        echo twig_escape_filter($this->env, (isset($context["a"]) ? $context["a"] : null), "html", null, true);
-        echo "
+<section class=\"row content-wrap\">
+    <div class=\"container\">
+        <div class=\"row\" id=\"post-masonry\">
+            ";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["data"]) ? $context["data"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["val"]) {
+            // line 19
+            echo "            <!--Blog Post-->
+            <article class=\"col-sm-4 post post-masonry post-format-image\">
+                <div class=\"post-wrapper row\">
+                    <div class=\"featured-content row\">
+                        <a href=\"index/single\"><img src=\"/app/assets/images/posts/masonry/1.jpg\" alt=\"\" class=\"img-responsive\"></a>                    </div>
+                    <div class=\"post-excerpt row\">
+                        <h5 class=\"post-meta\">
+                            <a href=\"#\" class=\"date\">";
+            // line 26
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["val"], "msgTime", array()), "d"), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["val"], "msgTime", array()), "m"), "html", null, true);
+            echo ", ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["val"], "msgTime", array()), "Y"), "html", null, true);
+            echo "</a>
+                            <span class=\"post-author\"><i>by</i><a href=\"#\">";
+            // line 27
+            echo twig_escape_filter($this->env, $this->getAttribute($context["val"], "msgUser", array()), "html", null, true);
+            echo "</a></span>
+                        </h5>
+                        <h3 class=\"post-title\"><a href=\"index/single\">";
+            // line 29
+            echo twig_escape_filter($this->env, $this->getAttribute($context["val"], "msgTitle", array()), "html", null, true);
+            echo "</a></h3>
+                        <p>";
+            // line 30
+            echo twig_escape_filter($this->env, $this->getAttribute($context["val"], "msgContent", array()), "html", null, true);
+            echo "</p>
+                        <footer class=\"row\">
+                            <h5 class=\"taxonomy\"><i>in</i> <a href=\"#\">image</a>, <a href=\"#\">entertainment</a></h5>
+                            <div class=\"response-count\"><img src=\"/app/assets/images/comment-icon-gray.png\" alt=\"\">5</div>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['val'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 39
+        echo "        </div>
+    </div>
+</section>
 ";
     }
 
@@ -61,22 +108,50 @@ class __TwigTemplate_f537c11ed7d8e26369670a2f3d692a05b883e5195434dcf70b6d4297e8c
 
     public function getDebugInfo()
     {
-        return array (  47 => 14,  37 => 7,  31 => 3,  28 => 2,  11 => 1,);
+        return array (  93 => 39,  78 => 30,  74 => 29,  69 => 27,  61 => 26,  52 => 19,  48 => 18,  31 => 3,  28 => 2,  11 => 1,);
     }
 }
 /* {% extends "layout.html" %}*/
 /* {% block content %}*/
+/* <section class="row featured-post-carousel">*/
+/*     <div class="item post">*/
+/*         <img src="/app/assets/images/featured-posts/1.jpg" alt="" class="img-responsive main-bg">*/
+/*         <div class="post-content">*/
+/*             <div class="container">*/
+/*                 <h5 class="post-meta"><i>in</i> <a href="#">Author Profile</a> | <a href="#">feb 17, 2016</a></h5>*/
+/*                 <h2 class="post-title"><a href="/index/single">Nature, in the broadest sense, is the natural, physical, or material world or universe.</a></h2>*/
+/*                 <a href="index/single" class="btn btn-primary"><span>read more</span></a>            </div>*/
+/*         </div>*/
+/*     </div>*/
+/* </section>*/
 /* */
-/* */
-/* <body>*/
-/* */
-/* <h2>This is a view page!{{a}}</h2>*/
-/* <h2>This is a view page!</h2>*/
-/* <h2>This is page!</h2>*/
-/* <h2>This is a view page!</h2>*/
-/* <h2>This is a view page!</h2>*/
-/* </body>*/
-/* */
-/* {{ a }}*/
+/* <section class="row content-wrap">*/
+/*     <div class="container">*/
+/*         <div class="row" id="post-masonry">*/
+/*             {% for val in data %}*/
+/*             <!--Blog Post-->*/
+/*             <article class="col-sm-4 post post-masonry post-format-image">*/
+/*                 <div class="post-wrapper row">*/
+/*                     <div class="featured-content row">*/
+/*                         <a href="index/single"><img src="/app/assets/images/posts/masonry/1.jpg" alt="" class="img-responsive"></a>                    </div>*/
+/*                     <div class="post-excerpt row">*/
+/*                         <h5 class="post-meta">*/
+/*                             <a href="#" class="date">{{val.msgTime|date('d')}} {{val.msgTime|date('m')}}, {{val.msgTime|date('Y')}}</a>*/
+/*                             <span class="post-author"><i>by</i><a href="#">{{val.msgUser}}</a></span>*/
+/*                         </h5>*/
+/*                         <h3 class="post-title"><a href="index/single">{{val.msgTitle}}</a></h3>*/
+/*                         <p>{{val.msgContent}}</p>*/
+/*                         <footer class="row">*/
+/*                             <h5 class="taxonomy"><i>in</i> <a href="#">image</a>, <a href="#">entertainment</a></h5>*/
+/*                             <div class="response-count"><img src="/app/assets/images/comment-icon-gray.png" alt="">5</div>*/
+/*                         </footer>*/
+/*                     </div>*/
+/*                 </div>*/
+/*             </article>*/
+/*             {% endfor %}*/
+/*         </div>*/
+/*     </div>*/
+/* </section>*/
 /* {% endblock %}*/
+/* */
 /* */

@@ -16,11 +16,15 @@ define('APP',CYPHP.'/app');
 define('DEBUG',true);
 define('MODEL','/app');
 
+/**
+ * composer方法
+ * vendor内部自动加载类
+ */
 include "vendor/autoload.php";
 
 if(DEBUG){
     /**
-     * 开源错误提示
+     * 开源错误提示工具Whoops
      */
     $whoops = new \Whoops\Run;
     $errorTitle = '框架出错!';
