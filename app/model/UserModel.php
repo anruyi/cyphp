@@ -4,12 +4,17 @@ namespace app\model;
 
 use core\lib\Model;
 
-class GuestModel extends Model
+/**
+ * Class GuestModel
+ * @package app\model
+ * 游客数据库模板
+ */
+class UserModel extends Model
 {
-    public $table = 'guestbook';
+    public $table = 'user';
 
     /**
-     * 所有留言
+     * 默认获取所有数据
      */
     public function all()
     {
@@ -18,7 +23,7 @@ class GuestModel extends Model
     }
 
     /**
-     * 添加一个留言
+     * 默认插入数据
      */
     public function addOne()
     {

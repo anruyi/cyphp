@@ -9,13 +9,14 @@ namespace app\model;
 
 use core\lib\Model;
 
-class MainModel extends Model
+class AdminModel extends Model
 {
     /**
      * @var string
-     * 查询的表名
+     * 要查询的表名
      */
-    public $table = 'cytable';
+    public $table = 'admin';
+
     public function lists()
     {
         $res = $this->select($this->table,'*');

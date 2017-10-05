@@ -6,12 +6,7 @@ namespace app\ctrl;
 use app\model\UserModel;
 use core\CyPHP;
 
-/**
- * Class indexCtrl
- * @package app\ctrl
- * 所有用户都可以操作的控制器
- */
-class indexCtrl extends CyPHP
+class UserCtrl extends CyPHP
 {
     /**
      * 所有留言
