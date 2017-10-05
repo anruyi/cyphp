@@ -3,6 +3,7 @@
 
 namespace app\ctrl;
 
+use app\model\IndexModel;
 use app\model\UserModel;
 use core\CyPHP;
 
@@ -18,7 +19,7 @@ class indexCtrl extends CyPHP
      */
     public function index()
     {
-        $model = new UserModel();
+        $model = new IndexModel();
         $data = $model->all();
         $this->assign('data',$data);
         $this->assign('CYPHP',CYPHP);
