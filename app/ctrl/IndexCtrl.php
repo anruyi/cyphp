@@ -4,7 +4,6 @@
 namespace app\ctrl;
 
 use app\model\IndexModel;
-use app\model\UserModel;
 use core\CyPHP;
 
 /**
@@ -15,28 +14,28 @@ use core\CyPHP;
 class indexCtrl extends CyPHP
 {
     /**
-     * 所有留言
+     * 默认主方法
      */
     public function index()
     {
         $model = new IndexModel();
+
         $data = $model->all();
+
+        /**
+         * [导入数据到前端]:
+         * 1.主页面所有post封面数据
+         */
         $this->assign('data',$data);
-        $this->assign('CYPHP',CYPHP);
+
+        /**
+         * [display view]:主页面index.html
+         */
         $this->display('index.html');
     }
 
     /**
-     * 添加留言
-     */
-    public function layout()
-    {
-
-        $this->display('layout.html');
-    }
-
-    /**
-     * 关于
+     * 显示关于页面
      */
     public function about()
     {
@@ -44,16 +43,12 @@ class indexCtrl extends CyPHP
         $this->display('about.html');
     }
 
+    /**
+     * 显示post单页面
+     */
     public function single()
     {
         $this->display('single.html');
     }
 
-    /**
-     * 保存留言
-     */
-    public function save()
-    {
-
-    }
 }

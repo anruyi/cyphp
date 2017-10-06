@@ -1,9 +1,8 @@
 RewriteEngine on
 
  ##
- # @from Yii中文网 www.yii-china.com
- # @mail xianan_huang@163.com
- # @author 上班偷偷打酱油
+ # @author
+ # 路由美化，移除index.php
  ##
 
  # 如果是一个目录或者文件，就访问目录或文件

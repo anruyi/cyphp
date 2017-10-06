@@ -90,7 +90,7 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
                     </ul>
                 </li>
                 <li><a href=\"style-guide.html\" title=\"\">Styles</a></li>
-                <li><a href=\"about.html\" title=\"\">About</a></li>
+                <li><a href=\"/index/about/\" title=\"\">About</a></li>
                 <li><a href=\"contact.html\" title=\"\">Contact</a></li>
             </ul>
         </nav> <!-- end main-nav-wrap -->
@@ -176,7 +176,7 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
                             <li>
                                 <div class=\"featured-post-slide\">
 
-                                    <div class=\"post-background\" style=\"background-image:url('images/thumbs/featured/featured-3.jpg');;\"></div>
+                                    <div class=\"post-background\" style=\"background-image:url('/app/assets/images/thumbs/featured/featured-3.jpg');;\"></div>
 
                                     <div class=\"overlay\"></div>
 
@@ -220,7 +220,10 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
                \t\t\t\t<a href=\"#\">Photography</a>
                \t\t\t</span>
                         </div>
-
+                        ";
+            // line 200
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : null), "session", array()), "get", array(0 => "hello"), "method"), "html", null, true);
+            echo "
                         <h1 class=\"entry-title\"><a href=\"single-standard.html\">";
             // line 201
             echo twig_escape_filter($this->env, $this->getAttribute($context["data"], "title", array()), "html", null, true);
@@ -345,9 +348,6 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
         <div class=\"row\">
 
             <div class=\"col-twelve\">
-                <div class=\"copyright\">
-                    <span>Copyright &copy; 2017.Company name All rights reserved.<a target=\"_blank\" href=\"http://www.17sucai.com/\">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span>
-                </div>
 
                 <div id=\"go-top\">
                     <a class=\"smoothscroll\" title=\"Back to Top\" href=\"#top\"><i class=\"icon icon-arrow-up\"></i></a>
@@ -387,7 +387,7 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
 
     public function getDebugInfo()
     {
-        return array (  246 => 212,  233 => 205,  226 => 201,  206 => 183,  202 => 182,  19 => 1,);
+        return array (  249 => 212,  236 => 205,  229 => 201,  225 => 200,  206 => 183,  202 => 182,  19 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -464,7 +464,7 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
 /*                     </ul>*/
 /*                 </li>*/
 /*                 <li><a href="style-guide.html" title="">Styles</a></li>*/
-/*                 <li><a href="about.html" title="">About</a></li>*/
+/*                 <li><a href="/index/about/" title="">About</a></li>*/
 /*                 <li><a href="contact.html" title="">Contact</a></li>*/
 /*             </ul>*/
 /*         </nav> <!-- end main-nav-wrap -->*/
@@ -550,7 +550,7 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
 /*                             <li>*/
 /*                                 <div class="featured-post-slide">*/
 /* */
-/*                                     <div class="post-background" style="background-image:url('images/thumbs/featured/featured-3.jpg');;"></div>*/
+/*                                     <div class="post-background" style="background-image:url('/app/assets/images/thumbs/featured/featured-3.jpg');;"></div>*/
 /* */
 /*                                     <div class="overlay"></div>*/
 /* */
@@ -589,7 +589,7 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
 /*                				<a href="#">Photography</a>*/
 /*                			</span>*/
 /*                         </div>*/
-/* */
+/*                         {{ app.session.get('hello') }}*/
 /*                         <h1 class="entry-title"><a href="single-standard.html">{{data.title}}</a></h1>*/
 /* */
 /*                     </div>*/
@@ -703,9 +703,6 @@ class __TwigTemplate_86ece0abf6efebe56665ca5f6c7ab477dcfad6cd32ba5ac1be7191b91cd
 /*         <div class="row">*/
 /* */
 /*             <div class="col-twelve">*/
-/*                 <div class="copyright">*/
-/*                     <span>Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://www.17sucai.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></span>*/
-/*                 </div>*/
 /* */
 /*                 <div id="go-top">*/
 /*                     <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon icon-arrow-up"></i></a>*/

@@ -21,7 +21,7 @@ class CyPHP
 {
     /**
      * @var array
-     * 大概是分配的意思
+     * assign数组，即显示在前端界面的数据
      */
     public $assign = array();
 

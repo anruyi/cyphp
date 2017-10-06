@@ -19,7 +19,7 @@ CYPHP框架目录结构
 ║
 ╠══ vendor ╦══ catfan 
 ║          ╠══ composer
-║          ╠══ filp  //whoop数据库引擎
+║          ╠══ filp  //whoop，开源错误提示
 ║          ╠══ psr   
 ║          ╠══ twig  //前端模板引擎
 ║          ╚══ autoload.php
@@ -61,6 +61,8 @@ CYPHP框架目录结构
 ### 功能二
 暂未完善
 
+### 功能三
+
 
 ## 三、注意事项
 
@@ -77,3 +79,7 @@ CYPHP框架目录结构
     > 没有例子
 3. 方法名：小驼峰
     > insertOne
+### 3.框架运行流程
+
+> 系统默认调用入口文件index.php，该文件装载必要的类库和开源PHP插件，完成后，调用CyPHP.php文件，框架开始运行。
+> CyPHP.php解析路由，并通过路由调用相关的控制器和方法
