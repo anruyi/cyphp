@@ -3,32 +3,32 @@ My first php framework named cyphp
 
 CYPHP框架目录结构
 ~~~
-╔══ app ╦══ assets  //静态库
-║       ╠══ ctrl    //C 控制器
-║       ╠══ model   //M 数据模型
-║       ╚══ views   //V 视图
-║            
-║
-╠══ core ╦══ common //公共函数库
-║        ╠══ config //配置文件
-║        ╠══ lib    //
-║        ╚══ CyPHP.php
-║
-╠══ log  //日志存放处（本目录自动生成）
-║
-║
-╠══ vendor ╦══ catfan 
-║          ╠══ composer
-║          ╠══ filp  //whoop，开源错误提示
-║          ╠══ psr   
-║          ╠══ twig  //前端模板引擎
-║          ╚══ autoload.php
-║
-║
-╠══ index.php  //入口文件
-║
-║
-╚══ README.MD  //说明
+┬── app ┬── assets  //静态库
+│       ├── ctrl    //C 控制器
+│       ├── model   //M 数据模型
+│       └── views   //V 视图
+│            
+│
+├── core ┬── common //公共函数库
+│        ├── config //配置文件
+│        ├── lib    //
+│        └── CyPHP.php
+│
+├── log  //日志存放处（本目录自动生成）
+│
+│
+├── vendor ┬── catfan 
+│          ├── composer
+│          ├── filp  //whoop，开源错误提示
+│          ├── psr   
+│          ├── twig  //前端模板引擎
+│          └── autoload.php
+│
+│
+├── index.php  //入口文件
+│
+│
+└── README.MD  //说明
 ~~~
 
 基础MVC使用参照样例程序。
