@@ -8,27 +8,27 @@
 
 > The Lightest PHP database framework to accelerate development
 
-## Main Features
+## Main Features 主要功能
 
-* **Lightweight** - 32KB around with only one file.
+* **Lightweight 轻量** - 32KB around with only one file.
 
-* **Easy** - Extremely easy to learn and use, friendly construction.
+* **Easy 简单** - Extremely easy to learn and use, friendly construction.
 
-* **Powerful** - Supports various common and complex SQL queries, data mapping, and prevent SQL injection.
+* **Powerful 强大** - Supports various common and complex SQL queries, data mapping, and prevent SQL injection.
 
-* **Compatible** - Supports all SQL databases, including MySQL, MSSQL, SQLite, MariaDB, Sybase, Oracle, PostgreSQL and more.
+* **Compatible 兼容** - Supports all SQL databases, including MySQL, MSSQL, SQLite, MariaDB, Sybase, Oracle, PostgreSQL and more.
 
-* **Friendly** - Works well with every PHP frameworks, like Laravel, Codeigniter, Yii, Slim, and framework which supports singleton extension.
+* **Friendly 友好** - Works well with every PHP frameworks, like Laravel, Codeigniter, Yii, Slim, and framework which supports singleton extension（单利模式）.
 
 * **Free** - Under MIT license, you can use it anywhere if you want.
 
-## Requirement
+## Requirement 要求
 
 PHP 5.4+ and PDO extension installed
 
-## Get Started
+## Get Started 开始
 
-### Install via composer
+### Install via composer 经由作曲家安装
 
 Add Medoo to composer.json configuration file.
 ```
@@ -79,7 +79,7 @@ echo json_encode($data);
 // ]
 ```
 
-## Contribution Guides
+## Contribution Guides 贡献指南
 
 For most of time, Medoo is using develop branch for adding feature and fixing bug, and the branch will be merged into master branch while releasing a public version. For contribution, submit your code to the develop branch, and start a pull request into it.
 
@@ -87,11 +87,13 @@ On develop branch, each commits are started with `[fix]`, `[feature]` or `[updat
 
 Keep it simple and keep it clear.
 
-## License
+## License 许可证
 
 Medoo is under the MIT license.
+  
+  [翻译]Medoo 可以在MIT许可证下使用
 
-## Links
+## Links 链接
 
 * Official website: [https://medoo.in](https://medoo.in)
 

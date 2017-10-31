@@ -17,7 +17,7 @@ CYPHP框架目录结构
 ├── log  //日志存放处（本目录自动生成）
 │
 │
-├── vendor ┬── catfan 
+├── vendor ┬── catfan //medoo 开源错误提示
 │          ├── composer
 │          ├── filp  //whoop，开源错误提示
 │          ├── psr   
@@ -83,3 +83,7 @@ CYPHP框架目录结构
 
 > 系统默认调用入口文件index.php，该文件装载必要的类库和开源PHP插件，完成后，调用CyPHP.php文件，框架开始运行。
 > CyPHP.php解析路由，并通过路由调用相关的控制器和方法
+
+~~~math
+a/b
+~~~
