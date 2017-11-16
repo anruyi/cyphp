@@ -1,20 +1,20 @@
 <?php
 /**
  * 入口文件，index.php
- * Date: 17-8-18
- * Time: 11:15
+ * 框架启动是率先执行的文件。
  */
 use core\CyPHP;
 
-//当前框架所在的根目录
+//当前框架所在的根目录cyphp/
 define('CYPHP',realpath('./'));
-//核心文件core所处目录
+//核心文件core所处目录:cyphp/core
 define('CORE',CYPHP.'/core');
-//项目文件：控制器、模型……
+//软件文件:cyphp/app
 define('APP',CYPHP.'/app');
-//调试
+//调试开关
 define('DEBUG',true);
-define('MODEL','/app');
+//模型层
+define('MODEL','/app/model');
 
 /**
  * composer方法
@@ -45,5 +45,7 @@ include CORE.'/CyPHP.php';
 spl_autoload_register("core\CyPHP::load");
 
 
-
+/**
+ * 启动框架
+ */
 CyPHP::run();

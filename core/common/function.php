@@ -1,10 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: chenyi
- * Date: 17-8-18
- * Time: 14:26
+ * Author: CYLeft
  */
+
 
 /**
  * @param $var2

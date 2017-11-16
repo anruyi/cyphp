@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ChenYi
- * Date: 17-8-18
- * Time: 14:53
+ * Author: CYLeft
+ * 启动框架方法
  */
 
 namespace core;
@@ -15,7 +13,12 @@ use core\lib\Route;
 /**
  * Class CyPHP
  * @package core
- * 基类
+ * [功能:]
+ * 一 运行框架
+ * 二 启动路由
+ * 三 自动加载
+ * 四 导出前端数据
+ * 五 display页面
  */
 class CyPHP
 {
@@ -32,7 +35,7 @@ class CyPHP
     public static $classMap = array();
 
     /**
-     * 启动框架调用方法
+     * 运行框架调用方法
      */
     static public function run()
     {
@@ -45,14 +48,23 @@ class CyPHP
          * 获取Route()的控制器名（自动追加Crtl.php）和方法
          */
         $route = new Route();
+
         $ctrlName = $route->ctrl;
         $ctrlAction = $route->action;
         $ctrlPath = APP.'/ctrl/'.$ctrlName.'Ctrl.php';
+
         if (is_file($ctrlPath)){
+
+            //控制器:/app/ctrl/indexCtrl
             $ctrlClass = '\app\ctrl\\'.$ctrlName.'Ctrl';
             $indexCtrl = new $ctrlClass();
+
+            //通过index控制器调用其内部方法
             $indexCtrl->$ctrlAction();
+
+            //编写日志
             Log::log('ctrl:'.$ctrlName.'    '.'action:'.$ctrlAction);
+
         }else {
             throw new \Exception('找不到控制器'.$ctrlPath);
         }
@@ -94,24 +106,33 @@ class CyPHP
      */
     public function display($file)
     {
+        // index页面
         $html = $file;
+
+        // 拼接app/views/index
         $file = APP.'/views/'.$file;
+
         if (is_file($file)){
-            /**
-             * 使用TWIG模板引擎
-             * 将页面通过TWIG模板引擎加载进页面
-             */
-            require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
+
+            // 将页面通过TWIG模板引擎加载进页面
+//            require_once CYPHP.'/vendor/twig/twig/lib/Twig/Autoloader.php';
             \Twig_Autoloader::register();
             $loader = new \Twig_Loader_Filesystem(APP.'/views');
+
+            //将.html转译成.php文件
             $twig = new \Twig_Environment($loader, array(
+                // 我将此视为twig内置的log程序,这个是可以删除的.
                 'cache' => CYPHP.'/log/compilation_cache',
                 'debug' => 'DEBUG'
             ));
+            // 装载.php文件
             $template = $twig->loadTemplate($html);
             $template->display($this->assign?$this->assign:array());
+
         } else {
+
             p('is not a file',$file);
+
         }
 
     }
