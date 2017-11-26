@@ -6,7 +6,6 @@
 
 namespace core;
 
-use app\ctrl\indexCtrl;
 use core\lib\Log;
 use core\lib\Route;
 
@@ -133,6 +132,22 @@ class CyPHP
 
             p('is not a file',$file);
 
+        }
+
+    }
+
+    public function displayDefault($file)
+    {
+        // index页面
+        $html = $file;
+        // 拼接app/views/index
+        $file = APP.'/views/'.$file;
+
+        if (is_file($file)){
+            $temp=file_get_contents($file);
+            echo $temp;
+        } else {
+            p('is not a file',$file);
         }
 
     }

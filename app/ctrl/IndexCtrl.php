@@ -20,18 +20,9 @@ class indexCtrl extends CyPHP
     {
         $model = new IndexModel();
 
-        $data = $model->all();
+        $data = $model->getPostCover();
 
-        /**
-         * [导入数据到前端]:
-         * 1.主页面所有post封面数据
-         */
-        $this->assign('data',$data);
-
-        /**
-         * [display view]:主页面index.html
-         */
-        $this->display('index.html');
+        var_dump($data);
     }
 
     /**
@@ -39,8 +30,7 @@ class indexCtrl extends CyPHP
      */
     public function about()
     {
-
-        $this->display('about.html');
+        header("Access-Control-Allow-Origin:*");
     }
 
     /**
@@ -49,6 +39,17 @@ class indexCtrl extends CyPHP
     public function single()
     {
         $this->display('single.html');
+    }
+
+
+    public function login()
+    {
+
+    }
+
+    public function register()
+    {
+
     }
 
 }

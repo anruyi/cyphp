@@ -4,9 +4,9 @@
  */
 return array(
         'database_type' => 'mysql',
-        'database_name' => 'cyphp',
+        'database_name' => 'campus',
         'server' => 'localhost',
-        'username' => 'cyphp',
+        'username' => 'campus',
         'password' => '123456',
         'charset' => 'utf8'
 );

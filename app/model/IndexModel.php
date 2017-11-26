@@ -15,7 +15,7 @@ use core\lib\Model;
  */
 class IndexModel extends Model
 {
-    public $table = 'posts';
+    public $table = 'post';
 
     /**
      * 所有数据
@@ -34,12 +34,12 @@ class IndexModel extends Model
     public function getPostCover()
     {
         $data = [
-            'id' => $this->select($this->table,'id'),
-            'title' => $this->select($this->table,'title'),
-            'author' => $this->select($this->table,'author'),
-            'summary' => $this->select($this->table,'summary'),
-            'created_at' => $this->select($this->table,'created_at'),
-            'updated_at' => $this->select($this->table,'updated_at'),
+            'id' => $this->select($this->table,'postID'),
+            'title' => $this->select($this->table,'postTitle'),
+            'author' => $this->select($this->table,'postAuthor'),
+            'summary' => $this->select($this->table,'postSummary'),
+            'created_at' => $this->select($this->table,'postCreateAt'),
+            'updated_at' => $this->select($this->table,'postUpdateAt'),
         ];
         return $data;
     }
@@ -52,12 +52,11 @@ class IndexModel extends Model
     public function getPostAll()
     {
         $data = [
-            'id' => $this->select($this->table,'id'),
-            'title' => $this->select($this->table,'title'),
-            'author' => $this->select($this->table,'author'),
-            'content' => $this->select($this->table, 'content'),
-            'created_at' => $this->select($this->table,'created_at'),
-            'updated_at' => $this->select($this->table,'updated_at'),
+            'id' => $this->select($this->table,'postID'),
+            'title' => $this->select($this->table,'postTitle'),
+            'author' => $this->select($this->table,'postAuthor'),
+            'created_at' => $this->select($this->table,'postCreateAt'),
+            'updated_at' => $this->select($this->table,'postUpdateAt'),
         ];
         return $data;
     }
@@ -72,14 +71,14 @@ class IndexModel extends Model
             $this->select(
                 $this->table,
                 [
-                    "title",
-                    'author',
-                    'content',
-                    'created_at',
-                    'updated_at',
+                    "postTitle",
+                    'postAuthor',
+                    'postContent',
+                    'postCreateAt',
+                    'postUpdateAt',
                 ],
                 [
-                    "id[=]" => $id,
+                    "postID[=]" => $id,
                 ]
             );
         return $data;

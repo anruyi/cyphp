@@ -1,8 +1,5 @@
 <?php
-/**
- * 入口文件，index.php
- * 框架启动是率先执行的文件。
- */
+
 use core\CyPHP;
 
 //当前框架所在的根目录cyphp/
@@ -48,4 +45,5 @@ spl_autoload_register("core\CyPHP::load");
 /**
  * 启动框架
  */
+
 CyPHP::run();
